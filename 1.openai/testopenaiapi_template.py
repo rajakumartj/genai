@@ -1,11 +1,13 @@
 
 from openai import OpenAI
+from keys import Keys
 import os
-import pandas as pd
+
 
 client = OpenAI(
     # This is default and can be omitted
-    api_key=os.environ.get("OPEN_API_KEY")
+    # api_key=os.environ.get("OPEN_API_KEY")
+    api_key=Keys.OPENAI_API_KEY.value
 )
 
 response = client.chat.completions.create(
@@ -31,3 +33,4 @@ response = client.chat.completions.create(
     frequency_penalty=0,
     presence_penalty=0
 )
+print(response.choices[0].message.content)
