@@ -5,16 +5,16 @@
 
 
 from langchain_openai import OpenAI
+from keys import Keys
 
-my_api_key = ""
-client = OpenAI(api_key=my_api_key)
+client = OpenAI(api_key=Keys.OPENAI_API_KEY.value)
 
-my_prompt = ""
-# my_prompt = "How many countries are there in Asia? and list the top 10 counties"
-my_prompt = "What is the capital of India"
+# prompt = ""
+# prompt = "How many countries are there in Asia? and list the top 10 counties"
+prompt = "What is the capital of India?"
 
 
-response = client.invoke(my_prompt)
+response = client.invoke(prompt)
 print(response)
 
 
