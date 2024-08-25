@@ -2,8 +2,7 @@ from keys import Keys
 from openai import OpenAI
 
 
-my_api_key = Keys.OPENAI_API_KEY.value
-client = OpenAI(api_key=my_api_key)
+client = OpenAI(api_key=Keys.OPENAI_API_KEY.value)
 
 employee_description = "Rajakumar is working for Morgan stanley in Wealth management division reporting to Ashish and workiing on RMT application"
 prompt = f'''

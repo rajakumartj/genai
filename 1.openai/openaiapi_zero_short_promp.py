@@ -1,7 +1,7 @@
 from openai import OpenAI
+from keys import Keys
 
-my_api_key = ""
-client = OpenAI(api_key=my_api_key)
+client = OpenAI(api_key=Keys.OPENAI_API_KEY.value)
 my_prompt = "How to pass UPSC exam?"
 
 response = client.chat.completions.create(
