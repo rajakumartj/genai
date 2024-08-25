@@ -3,6 +3,9 @@ import os
 from dotenv import load_dotenv
 import json
 import pandas as pd
+from os.path import dirname, join
+
+
 
 import traceback
 from langchain_openai import ChatOpenAI
@@ -13,7 +16,9 @@ from langchain.chains import SequentialChain
 
 load_dotenv()
 KEY = os.getenv("OPENAI_API_KEY")
-print(KEY)
+
+project_root = dirname(dirname(__file__))
+output_path = join(project_root, 'json_files/mcq_output.json')
 
 TEMPLATE = """
 Text:{text}
@@ -35,7 +40,7 @@ Quiz_MCQs:
 check for an expert writer of the above quiz:
 """
 
-f = open(r"I:/aiml/genai/src/json_files/mcq_output.json")
+f = open(output_path)
 RESPONSE_JSON = json.load(f)
 json.dumps(RESPONSE_JSON)
 
@@ -61,7 +66,9 @@ generate_evaluate_chain = SequentialChain(chains=[quiz_chain, review_chain],
                                           output_variables=["quiz", "review"], verbose=True
                                           )
 
-file_path = r"I:\aiml\genai\src\input_data\mcq_quiz_data.txt"
+# file_path = r"./genai\src\input_data\mcq_quiz_data.txt"
+file_path = join(project_root, 'input_data\mcq_quiz_data.txt')
+
 with open(file_path, 'r') as file:
     TEXT = file.read()
 
