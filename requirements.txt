@@ -6,3 +6,14 @@ dotenv
 streamlit
 python-dotenv
 PyPDF2
+chromadb
+tiktoken
+chardet
+langchain_text_splitters
+langchain_pinecone
+langchain-chroma
+
+#Llama 2 setup
+huggingface_hub
+llama-cpp-python
+numpy
