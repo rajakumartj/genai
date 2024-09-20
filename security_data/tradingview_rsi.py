@@ -16,7 +16,7 @@ rsi_list = []
 for name in df.get("Name"):
     # print("Getting the data for " + name)
     rsi14 = get_rsi14(name)
-    if rsi14 > 65:
+    if rsi14 > 50:
         name_list.append(name)
         rsi_list.append(str(rsi14))
 

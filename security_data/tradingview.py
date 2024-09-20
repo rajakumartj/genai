@@ -1,7 +1,7 @@
 # pip install tradingview-ta
 from tradingview_ta import TA_Handler, Exchange, Interval
 
-my_stock = TA_Handler(symbol="TITAN", exchange="NSE", screener="india", interval=Interval.INTERVAL_1_DAY,)
+my_stock = TA_Handler(symbol="TATAMOTORS", exchange="NSE", screener="india", interval=Interval.INTERVAL_1_DAY)
 
 
 

@@ -2,8 +2,9 @@ from nsetools import Nse
 
 # creating a Nse object
 nse = Nse()
+print(nse)
 
-print(nse.get_index_list())
+# print(nse.get_index_list())
 
 
 
@@ -14,4 +15,4 @@ code = "wipro"
 quote = nse.get_quote(code)
 
 # printing quote
-print(quote)
+# print(quote)
